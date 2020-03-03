@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.8.2)
 
-project(helloworld)
+project(tst_qjsengine)
 
 # Find includes in the build directories
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -27,11 +27,11 @@ if(WIN32)
 endif()
 
 # Find the QtWidgets library
-find_package(Qt5 REQUIRED COMPONENTS Widgets)
+find_package(Qt5 REQUIRED COMPONENTS Widgets Qml)
 find_package(Qt5Test REQUIRED)
 
-# Tell CMake to create the helloworld executable
-add_executable(helloworld main.cpp)
+# Tell CMake to create the tst_qjsengine executable
+add_executable(tst_qjsengine main.cpp)
 
 # Add the Qt5 Widgets for linking
-target_link_libraries(helloworld Qt5::Widgets Qt5::Test)
+target_link_libraries(tst_qjsengine Qt5::Widgets Qt5::Test  Qt5::Qml)
